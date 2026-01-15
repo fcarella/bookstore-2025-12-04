@@ -13,10 +13,11 @@ public class App {
     private Scanner input = new Scanner(System.in);
 
     public void run() {
+
         populate();
         int choice = 0;
         while (choice != 99) {
-            System.out.println("\n***********************");
+            System.out.println("\n***********Fred Carella's Superstore************");
             System.out.println(" 1. Add Items");
             System.out.println(" 2. Edit Items");
             System.out.println(" 3. Delete Items");
