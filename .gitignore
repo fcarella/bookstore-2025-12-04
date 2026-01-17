@@ -6,6 +6,7 @@ ai_prompt*
 !**/src/main/**/target/
 !**/src/test/**/target/
 ai_prompt*
+volumes/
 
 ### IntelliJ IDEA ###
 .idea/modules.xml
