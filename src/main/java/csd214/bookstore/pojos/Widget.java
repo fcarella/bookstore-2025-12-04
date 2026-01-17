@@ -1,5 +1,6 @@
 package csd214.bookstore.pojos;
 
+import java.util.Objects;
 import java.util.UUID;
 
 public class Widget extends Product {
@@ -66,5 +67,16 @@ public class Widget extends Product {
                 "widgetName='" + widgetName + '\'' +
                 ", price=" + price +
                 "} " + super.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (!(o instanceof Widget widget)) return false;
+        return Double.compare(getPrice(), widget.getPrice()) == 0 && Objects.equals(getWidgetName(), widget.getWidgetName());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getWidgetName(), getPrice());
     }
 }
