@@ -69,6 +69,7 @@ public class App {
             System.out.println("2. Add Magazine");
             System.out.println("3. Add DiscMag");
             System.out.println("4. Add Ticket");
+            System.out.println("5. Add Widget");
             System.out.println("99. Exit");
 
             try {
@@ -87,6 +88,7 @@ public class App {
                 case 2: item = new Magazine(); break;
                 case 3: item = new DiscMag(); break;
                 case 4: item = new Ticket(); break;
+                case 5: item = new Widget(); break;
                 default: System.out.println("Invalid selection."); continue;
             }
 
@@ -112,6 +114,7 @@ public class App {
             System.out.println("3. Magazines");
             System.out.println("4. DiscMags");
             System.out.println("5. Tickets");
+            System.out.println("6. Widgets");
             System.out.println("99. Exit");
 
             try {
@@ -131,6 +134,7 @@ public class App {
                 case 3: filter = Magazine.class; break;
                 case 4: filter = DiscMag.class; break;
                 case 5: filter = Ticket.class; break;
+                case 6: filter = Widget.class; break;
                 default: System.out.println("Invalid selection."); continue;
             }
 
