@@ -42,7 +42,7 @@ public class Widget extends Product {
         System.out.println("Enter Widget name (<Default Widget Name>) : ");
         setWidgetName(getInput("Default Widget Name"));
         System.out.println("Enter Widget price (<0>) : ");
-        setPrice(getInput(0));
+        setPrice(getInput(0.0d));
     }
 
     @Override
