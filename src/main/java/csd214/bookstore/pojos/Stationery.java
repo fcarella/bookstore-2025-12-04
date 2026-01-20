@@ -2,7 +2,7 @@ package csd214.bookstore.pojos;
 
 import java.util.Objects;
 
-public abstract class Stationary extends Product  {
+public abstract class Stationery extends Product  {
     private String brand;
 
     public String getBrand(){
@@ -11,19 +11,19 @@ public abstract class Stationary extends Product  {
     public void setBrand(String brand) {
         this.brand = brand;
     }
-    public Stationary() {
+    public Stationery() {
     }
 
     @Override
     public String toString(){
-        return "Stationary{" +
+        return "Stationery{" +
                 "brand='" + brand + '\'' +
                 "} " + super.toString();
     }
 
     @Override
     public boolean equals(Object o){
-        if(!(o instanceof Stationary that)) return false;
+        if(!(o instanceof Stationery that)) return false;
         return Objects.equals(getBrand(), that.getBrand());
     }
 
