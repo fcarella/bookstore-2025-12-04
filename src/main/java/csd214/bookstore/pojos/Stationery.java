@@ -34,7 +34,6 @@ public abstract class Stationery extends Product  {
 
     @Override
     public void initialize() {
-        // super.initialize(); // Critical: let Parent ask for Name/Price
         System.out.println("Enter Brand:");
         // this.brand = getInput("Generic");
         setBrand(getInput("Generic"));
@@ -46,7 +45,7 @@ public abstract class Stationery extends Product  {
         // super.edit();
 
         // 2. Edit Self fields
-        System.out.println("Edit Author [" + this.brand + "]:");
+        System.out.println("Edit Brand [" + this.brand + "]:");
         this.brand = getInput(this.brand);
     }
 }

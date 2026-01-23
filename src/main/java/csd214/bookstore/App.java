@@ -119,7 +119,7 @@ public class App {
             System.out.println("3. Magazines");
             System.out.println("4. DiscMags");
             System.out.println("5. Tickets");
-            System.out.println("6. Stationary");
+            System.out.println("6. Stationery");
             System.out.println("7. MakeupProduct");
             System.out.println("99. Exit");
 

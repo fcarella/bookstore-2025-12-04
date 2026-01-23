@@ -1,11 +1,5 @@
-import csd214.bookstore.pojos.Stationery;
+package csd214.bookstore.pojos;
 
-
-private Object pageCount() {
-}
-
-void main() {
-}
 
 public class Notebook extends Stationery {
     private int pageCount;
@@ -15,26 +9,18 @@ public class Notebook extends Stationery {
         super.initialize();
 
         System.out.println("How many pages it has? ");
-        this.pageCount = getInput();
+        this.pageCount = getInput(pageCount);
     }
 
     @Override
     public void sellItem() {
-        System.out.println("Selling [Brand] Notebook with [pageCount] pages...");
-        pageCount(pageCount());
+        System.out.println("Selling" + getBrand() + "Notebook with" + pageCount + "pages...");
     }
 
     @Override
     public double getPrice() {
-        return 0;
-    }
-
-    public int getPageCount() {
-        return pageCount;
-    }
-
-    public void setPageCount(int pageCount) {
-        this.pageCount = pageCount;
+        return 50;
     }
 }
+
 
