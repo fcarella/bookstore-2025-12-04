@@ -17,7 +17,7 @@ A console-based Java application for managing a bookstore inventory, performing 
 *   **Menu System:** Interactive console menu for navigation.
 
 ## Class Hierarchy
-
+Anything
 ![Class Diagram](documentation/bookstore-2025-12-04-213439.png)
 
 The hierarchy implements the following structure:
