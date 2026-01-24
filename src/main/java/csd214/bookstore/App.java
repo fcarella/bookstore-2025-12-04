@@ -70,6 +70,10 @@ public class App {
             System.out.println("3. Add DiscMag");
             System.out.println("4. Add Ticket");
             System.out.println("5. Add Widget");
+            System.out.println("6. Add Pen");
+            System.out.println("7. Add Notebook");
+            System.out.println("8. Add Action Game");
+            System.out.println("9. Add RPG Game");
             System.out.println("99. Exit");
 
             try {
@@ -89,6 +93,10 @@ public class App {
                 case 3: item = new DiscMag(); break;
                 case 4: item = new Ticket(); break;
                 case 5: item = new Widget(); break;
+                case 6: item = new Pen(); break;
+                case 7: item = new Notebook(); break;
+                case 8: item = new ActionGame(); break;
+                case 9: item = new RPGgame(); break;
                 default: System.out.println("Invalid selection."); continue;
             }
 
@@ -115,7 +123,10 @@ public class App {
             System.out.println("4. DiscMags");
             System.out.println("5. Tickets");
             System.out.println("6. Widgets");
+            System.out.println("7. Stationary");
+            System.out.println("8. Video Game");
             System.out.println("99. Exit");
+
 
             try {
                 String line = input.nextLine();
@@ -135,6 +146,8 @@ public class App {
                 case 4: filter = DiscMag.class; break;
                 case 5: filter = Ticket.class; break;
                 case 6: filter = Widget.class; break;
+                case 7: filter = Stationary.class; break;
+                case 8: filter = VideoGame.class; break;
                 default: System.out.println("Invalid selection."); continue;
             }
 

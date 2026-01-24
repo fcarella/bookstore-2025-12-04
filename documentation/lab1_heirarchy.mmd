@@ -1,0 +1,55 @@
+classDiagram
+    class Product {
+        -name : String
+        -price : double
+        +initialize()
+        +sellItem()
+    }
+
+    class Book {
+        -author : String
+    }
+
+    class Magazine {
+        -int orderQty
+        -java.util.Date currentIssue
+
+        +Magazine()
+        +Magazine(int orderQty, Date currentIssue, String title, double price, int copies)
+
+        +edit()
+        +initialize()
+        +sellItem()
+    }
+
+    class Ticket {
+        +description
+        +price
+        +sellItem()
+    }
+
+    class Stationery {
+        -brand : String
+    }
+
+    class VideoGame {
+        <<abstract>>
+        -platform : String
+    }
+
+    class ActionGame {
+        -multiplayer : boolean
+    }
+
+    class RPGGame {
+        -mainStoryHours : int
+    }
+
+    Product <|-- Book
+    Product <|-- Magazine
+    Product <|-- Ticket
+    Product <|-- Stationery
+    Product <|-- VideoGame
+
+    VideoGame <|-- ActionGame
+    VideoGame <|-- RPGGame
