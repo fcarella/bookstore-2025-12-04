@@ -5,6 +5,8 @@ ai_prompt*
 !.mvn/wrapper/maven-wrapper.jar
 !**/src/main/**/target/
 !**/src/test/**/target/
+ai_prompt*
+volumes/
 
 ### IntelliJ IDEA ###
 .idea/modules.xml
@@ -38,4 +40,5 @@ build/
 .vscode/
 
 ### Mac OS ###
-.DS_Store
+.DS_Storevolumes/
+volumes/

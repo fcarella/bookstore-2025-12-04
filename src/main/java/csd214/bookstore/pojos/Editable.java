@@ -24,8 +24,12 @@ public abstract class Editable implements Serializable, SaleableItem {
 
     public Scanner input = new Scanner(System.in);
 
-    public abstract void edit();
-    public abstract void initialize();
+    public void edit() {
+    }
+
+    public void initialize() {
+    }
+
     // setInput, setOutput are used when unit testing
     // see https://stackoverflow.com/questions/1647907/junit-how-to-simulate-system-in-testing
     public void setSystemInput(ByteArrayInputStream testIn){
