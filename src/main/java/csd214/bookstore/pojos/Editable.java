@@ -14,7 +14,9 @@ public abstract class Editable implements Serializable, SaleableItem {
 
     // 1. Update Abstract Methods to accept the dependency
     public abstract void edit(Scanner input);
-    public abstract void initialize(Scanner input);
+
+    public void initialize(Scanner input) {
+    }
 
     // 2. Update Helper methods to use the passed Scanner
     public String getInput(Scanner input, String defaultValue) {
