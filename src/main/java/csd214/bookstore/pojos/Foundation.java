@@ -1,19 +1,21 @@
 package csd214.bookstore.pojos;
+import java.util.Objects;
+import java.util.Scanner;
 
 public class Foundation extends MakeupProduct{
     private String coverage;
 
     @Override
-    public void initialize() {
-        super.initialize();
+    public void initialize(Scanner input) {
+        super.initialize(input);
         System.out.println("Select coverage");
-        this.coverage = getInput("Full coverage");
+        this.coverage = getInput(input,"Full coverage");
     }
     @Override
-    public void edit() {
-        super.edit();
+    public void edit(Scanner input) {
+        super.edit(input);
         System.out.print("Edit coverage [" +  this.coverage + "]:");
-        this.coverage = getInput(this.coverage);
+        this.coverage = getInput(input,this.coverage);
     }
     @Override
     public void sellItem() {
@@ -25,4 +27,16 @@ public class Foundation extends MakeupProduct{
         return 40;
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (o == null || getClass() != o.getClass()) return false;
+        if (!super.equals(o)) return false;
+        Foundation that = (Foundation) o;
+        return Objects.equals(coverage, that.coverage);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(super.hashCode(), coverage);
+    }
 }
