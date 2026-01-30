@@ -9,6 +9,16 @@ public abstract class MakeupProduct extends Product {
     }
     private String shade;
 
+    public void setShade(String shade) {
+        this.shade = shade;
+    }
+
+    public MakeupProduct(String shade) {
+        this.shade = shade;
+    }
+
+    public MakeupProduct() { };
+
     @Override
     public void edit(Scanner input) {
         System.out.println("Edit shade [" + this.shade + "]: ");

@@ -12,7 +12,10 @@ public abstract class Stationery extends Product  {
     public void setBrand(String brand) {
         this.brand = brand;
     }
-    public Stationery() {
+    public Stationery() { }
+
+    public Stationery(String brand) {
+        this.brand = brand;
     }
 
     @Override

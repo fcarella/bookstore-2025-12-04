@@ -3,17 +3,22 @@ package csd214.bookstore.pojos;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertNotEquals;
 
 public class LipstickTest {
-        @Test
+
+    @Test
         void testEquality() {
             // Arrange
-            Lipstick l = new Lipstick("Dior", "Pink", 40);
+            Lipstick l = new Lipstick("100","Gloss");
 
             // Act & Assert
-            assertEquals("Dior", l.getShade ());
-
-            assertEquals(l.hashCode(), l.hashCode(), "HashCodes must match");
+            assertEquals("100", l.getShade());
+            assertEquals("Gloss", l.getFinish());
         };
+    @Test
+    void testSellItem(){
+        Lipstick l = new Lipstick("100", "Gloss", 10);
+        l.sellItem();
+        assertEquals(9, l.getCount());
+    }
 };

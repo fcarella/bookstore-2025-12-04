@@ -5,18 +5,41 @@ import java.util.Scanner;
 
 public class Lipstick extends MakeupProduct {
     private String finish;
+     private int count;
 
-    public Lipstick(String pilot, String color, double v) {
-        super();
+    public int getCount() {
+        return count;
     }
 
-    public Lipstick() {
+    public void setCount(int count) {
+        this.count = count;
+    }
 
+    public Lipstick(String shade, String finish) {
+        super(shade);
+        this.finish = finish;
+    }
+
+    public Lipstick(String shade, String finish, int count) {
+        super(shade);
+        this.finish = finish;
+        this.count = count;
+    }
+
+    public Lipstick() { }
+
+    public String getFinish() {
+        return finish;
+    }
+
+    public void setFinish(String finish) {
+        this.finish = finish;
     }
 
     @Override
     public void sellItem() {
         System.out.println("Selling Lipstick: " + getShade() + "with a " + finish + " finish for " + getPrice());
+        setCount(getCount() - 1);
     }
 
     @Override

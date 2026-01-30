@@ -4,6 +4,30 @@ import java.util.Scanner;
 
 public class Foundation extends MakeupProduct{
     private String coverage;
+    private int count;
+
+    public Foundation(String shade, String coverage) {
+        super(shade);
+        this.coverage = coverage;
+
+    }
+
+    public Foundation(String shade, String coverage, int count) {
+        super(shade);
+        this.coverage = coverage;
+        this.count = count;
+    }
+
+    public Foundation() {
+    }
+
+    public int getCount() {
+        return count;
+    }
+
+    public void setCount(int count) {
+        this.count = count;
+    }
 
     @Override
     public void initialize(Scanner input) {
@@ -20,6 +44,15 @@ public class Foundation extends MakeupProduct{
     @Override
     public void sellItem() {
         System.out.println("Selling Foundation: " + getShade() + " with " + coverage + " for " + getPrice());
+        setCount(getCount() - 1);
+    }
+
+    public String getCoverage() {
+        return coverage;
+    }
+
+    public void setCoverage(String coverage) {
+        this.coverage = coverage;
     }
 
     @Override

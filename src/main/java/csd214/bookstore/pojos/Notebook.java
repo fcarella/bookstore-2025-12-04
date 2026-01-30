@@ -6,8 +6,25 @@ import java.util.Scanner;
 public class Notebook extends Stationery {
     private int pageCount;
 
+    public Notebook(String brand, int pageCount) {
+        setPageCount(pageCount);
+    }
+
+    public Notebook() {
+
+    }
+
+
     @Override
     public void edit(Scanner input) {
+    }
+
+    public int getPageCount() {
+        return pageCount;
+    }
+
+    public void setPageCount(int pageCount) {
+        this.pageCount = pageCount;
     }
 
     @Override

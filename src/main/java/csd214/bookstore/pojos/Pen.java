@@ -4,11 +4,23 @@ import java.util.Scanner;
 
 public class Pen extends Stationery{
     private String color;
-
-    public Pen(String pilot, String blue, double v) {
-    }
+    private double v;
 
     public Pen() {
+    }
+
+    public String getColor() {
+        return color;
+    }
+
+    public void setColor(String color) {
+        this.color = color;
+    }
+
+    public Pen(String brand,String color, double v) {
+        super(brand);
+        this.color = color;
+        this.v = v;
     }
 
     @Override
@@ -30,8 +42,11 @@ public class Pen extends Stationery{
 
     @Override
     public void initialize(Scanner input){
+        super.initialize(input);
         System.out.println("Enter Color");
-        this.color = getInput(input,"Unknown color");
+        setColor(getInput(input, "Color"));
+        System.out.println("Enter pen value:");
+        setV(getInput(input, 0.0));
     }
     @Override
     public void sellItem() {
@@ -41,5 +56,13 @@ public class Pen extends Stationery{
     @Override
     public double getPrice() {
         return 5;
+    }
+
+    public double getV() {
+        return v;
+    }
+
+    public void setV(double v) {
+        this.v = v;
     }
 }
