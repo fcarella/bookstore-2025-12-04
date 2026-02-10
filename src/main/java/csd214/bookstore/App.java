@@ -65,9 +65,10 @@ public class App {
         while (choice != 99) {
             System.out.println("\nAdd an item\n");
             System.out.println("1. Add Book");
-            System.out.println("2. Add Magazine");
-            System.out.println("3. Add DiscMag");
-            System.out.println("4. Add Ticket");
+            System.out.println("2. Add Pen");
+            System.out.println("3. Add Magazine");
+            System.out.println("4. Add DiscMag");
+            System.out.println("5. Add Ticket");
             System.out.println("99. Exit");
 
             try {
@@ -83,9 +84,10 @@ public class App {
             SaleableItem item = null;
             switch(choice) {
                 case 1: item = new Book(); break;
-                case 2: item = new Magazine(); break;
-                case 3: item = new DiscMag(); break;
-                case 4: item = new Ticket(); break;
+                case 2: item = new Pen(); break;
+                case 3: item = new Magazine(); break;
+                case 4: item = new DiscMag(); break;
+                case 5: item = new Ticket(); break;
                 default: System.out.println("Invalid selection."); continue;
             }
 

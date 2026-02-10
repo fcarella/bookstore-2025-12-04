@@ -2,8 +2,12 @@ package csd214.bookstore.pojos;
 
 import java.util.Scanner;
 
-public class RPGGAme extends VideoGame {
+public class RPGgame extends VideoGame {
     private int mainStoryHours;
+
+    public RPGgame(String name, String platform, double price, int copies) {
+        super(name, platform, price, copies);
+    }
 
     @Override
     public void initialize(Scanner input) {
@@ -15,7 +19,7 @@ public class RPGGAme extends VideoGame {
 
     @Override
     public void sellItem() {
-        System.out.println("Selling RPG Game for " + Platform + " | Story Length: " + mainStoryHours + " hours");
+        System.out.println("Selling RPG Game for " + getPlatform() + " | Story Length: " + mainStoryHours + " hours");
     }
 
     @Override
