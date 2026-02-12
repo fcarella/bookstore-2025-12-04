@@ -3,6 +3,9 @@ package csd214.bookstore.pojos;
 import java.util.Scanner;
 import java.util.UUID;
 
+/**
+ * DTO for {@link csd214.bookstore.entities.PublicationEntity}
+ */
 public abstract class Publication extends Product {
     private String title = "";
     private int copies = 0;
