@@ -1,4 +1,6 @@
-package csd214.bookstore.pojos;
+package csd214.pojos;
+
+import csd214.bookstore.pojos.SaleableItem;
 
 public class CashTill {
     private double runningTotal;

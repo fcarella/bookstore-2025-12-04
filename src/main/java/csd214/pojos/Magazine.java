@@ -1,4 +1,4 @@
-package csd214.bookstore.pojos;
+package csd214.pojos;
 
 import java.util.Date;
 import java.util.Scanner;
@@ -18,7 +18,6 @@ public class Magazine extends Publication {
 
     @Override
     public void initialize(Scanner input) {
-        super.initialize(input); // Title
 
         System.out.println("Enter Order Qty:");
         this.orderQty = getInput(input, 0);
@@ -26,7 +25,8 @@ public class Magazine extends Publication {
         System.out.println("Enter Current Issue Date (dd-MMM-yyyy):");
         this.currentIssue = getInput(input, new Date());
 
-        super.initPriceCopies(input); // Copies, Price
+        super.initialize(input); // Title
+
     }
 
     @Override

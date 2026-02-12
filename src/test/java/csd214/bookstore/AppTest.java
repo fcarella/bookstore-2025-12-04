@@ -1,8 +1,9 @@
 package csd214.bookstore;
 
-import csd214.bookstore.pojos.Book;
-import csd214.bookstore.pojos.Pen;
-import csd214.bookstore.pojos.SaleableItem;
+import csd214.App;
+import csd214.pojos.Book;
+import csd214.pojos.Pen;
+import csd214.pojos.SaleableItem;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Test;
 import java.io.ByteArrayInputStream;
@@ -54,7 +55,7 @@ class AppTest {
 
         // 4. Verify
         Book expected = new Book("Frank Herbert", "Dune Messiah", 25.00, 10);
-        SaleableItem result = app.findItem(expected);
+        SaleableItem result = app.findItem((SaleableItem) expected);
 
         assertNotNull(result);
         assertEquals("Dune Messiah", ((Book)result).getTitle());
@@ -72,8 +73,6 @@ class AppTest {
                 "Bic",      // Brand (Stationary)
                 "Blue",     // Pen Color
                 "Bic",      // Pen Brand
-
-                "99",       // Exit Add Item menu
                 "99"        // Quit app
         ) + "\n";
 
@@ -81,9 +80,9 @@ class AppTest {
 
         app.run();
 
-        Pen expected = new Pen("Bic", "Blue", 2.99, 10);
+        Pen expected = new Pen("Bic", 2.99, "Blue");
 
-        assertNotNull(app.findItem(expected));
+        assertNotNull(app.findItem((SaleableItem) expected));
     }
 
 }

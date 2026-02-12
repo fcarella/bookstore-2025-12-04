@@ -1,4 +1,6 @@
-package csd214.bookstore.pojos;
+package csd214.pojos;
+
+import csd214.bookstore.pojos.Magazine;
 
 import java.util.Date;
 import java.util.Scanner;
@@ -14,20 +16,19 @@ public class DiscMag extends Magazine {
         this.hasDisc = hasDisc;
     }
 
+    @Override
     public void initialize(Scanner input) {
-        // Pass scanner up to parent
-        super.initialize(input);
-
         System.out.println("Has Disc? (true/false):");
         this.hasDisc = getInput(input, false);
+        super.initialize(input); // Title, Qty, Date, Copies, Price
+
     }
 
     @Override
     public void edit(Scanner input) {
-        super.edit(input); // Title, Price, Copies, OrderQty, Date
-
         System.out.println("Edit Has Disc [" + this.hasDisc + "]:");
         this.hasDisc = getInput(input, this.hasDisc);
+        super.edit(input); // Title, Price, Copies, OrderQty, Date
     }
 
     @Override
