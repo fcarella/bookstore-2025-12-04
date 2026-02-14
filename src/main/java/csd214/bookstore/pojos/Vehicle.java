@@ -2,7 +2,9 @@ package csd214.bookstore.pojos;
 
 import java.util.Objects;
 import java.util.Scanner;
-
+/**
+ * DTO for {@link csd214.bookstore.entities.VehicleEntity}
+ */
 public class Vehicle extends Product {
     private String make;
     private String model;
