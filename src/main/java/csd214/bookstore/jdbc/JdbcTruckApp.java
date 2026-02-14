@@ -1,4 +1,4 @@
-package csd214.bookstore.mysql;
+package csd214.bookstore.jdbc;
 
 import csd214.bookstore.pojos.Truck;
 
