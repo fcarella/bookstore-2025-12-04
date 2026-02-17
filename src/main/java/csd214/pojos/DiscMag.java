@@ -1,11 +1,11 @@
 package csd214.pojos;
 
-import csd214.bookstore.pojos.Magazine;
+import csd214.pojos.Magazine;
 
 import java.util.Date;
 import java.util.Scanner;
 
-public class DiscMag extends Magazine {
+public class DiscMag extends Magazine implements SaleableItem {
     private boolean hasDisc;
 
     public DiscMag() {
@@ -35,6 +35,11 @@ public class DiscMag extends Magazine {
     public void sellItem() {
         System.out.println("Selling Disc Magazine (Disc: " + hasDisc + ")");
         setCopies(getCopies() - 1);
+    }
+
+    @Override
+    public double getPrice() {
+        return 0;
     }
 
     public boolean isHasDisc() { return hasDisc; }
