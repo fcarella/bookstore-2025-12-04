@@ -1,6 +1,6 @@
 package csd214.pojos;
 
-import csd214.bookstore.pojos.Vehicle;
+import csd214.pojos.Vehicle;
 
 import java.util.Scanner;
 

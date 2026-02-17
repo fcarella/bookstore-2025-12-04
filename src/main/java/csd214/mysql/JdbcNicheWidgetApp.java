@@ -4,7 +4,7 @@ import csd214.pojos.Widget;
 
 import java.sql.*;
 
-public class JdbcWidgetApp {
+public class JdbcNicheWidgetApp {
     private static final String URL = "jdbc:mysql://localhost:3333/bookstore";
     private static final String USER = "csd214";
     private static final String PASS = "itstudies12345";
@@ -44,7 +44,7 @@ public class JdbcWidgetApp {
     }
     private static void insertWidget(Connection conn, Widget w) throws SQLException {
         // SECURITY: Use ? to prevent SQL Injection
-        String sql = "INSERT INTO widgets (product_id, widget_name, price) VALUES (?, ?, ?)";
+        String sql = "INSERT INTO widgets (product_id, widget_name, price, platform) VALUES (?, ?, ?, ?)";
         try (PreparedStatement ps = conn.prepareStatement(sql)) {
             ps.setString(1, w.getProductId()); // UUID
             ps.setString(2, w.getWidgetName());
@@ -84,4 +84,3 @@ public class JdbcWidgetApp {
         }
     }
 }
-

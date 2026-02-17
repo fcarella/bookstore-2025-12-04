@@ -1,6 +1,6 @@
 package csd214.mysql;
 
-import csd214.bookstore.pojos.Truck;
+import csd214.pojos.Truck;
 
 import java.sql.*;
 import java.util.UUID;

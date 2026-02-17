@@ -1,6 +1,6 @@
 package csd214.pojos;
 
-import csd214.bookstore.pojos.SaleableItem;
+import csd214.pojos.SaleableItem;
 
 import java.io.Serializable;
 import java.util.Scanner;

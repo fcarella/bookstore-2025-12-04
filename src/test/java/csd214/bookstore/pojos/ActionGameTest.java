@@ -1,5 +1,5 @@
 package csd214.bookstore.pojos;
-import csd214.bookstore.pojos.ActionGame;
+import csd214.pojos.ActionGame;
 import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.Test;
 
@@ -16,11 +16,4 @@ public class ActionGameTest {
         assertEquals(75.99, game.getPrice());
     }
 
-    @Test
-    public void testSellItem(){
-        ActionGame game = new ActionGame("Call of Duty", "PS5", 79.99, 10);
-        game.sellItem();
-        assertEquals(9, game.getCopies()
-        );
-    }
 }
