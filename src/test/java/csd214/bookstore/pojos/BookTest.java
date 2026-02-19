@@ -1,5 +1,6 @@
 package csd214.bookstore.pojos;
 
+import csd214.pojos.Book;
 import org.junit.jupiter.api.Test;
 import java.io.ByteArrayInputStream;
 import java.util.Scanner;

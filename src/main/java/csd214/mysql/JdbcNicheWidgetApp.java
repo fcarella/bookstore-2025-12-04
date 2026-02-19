@@ -1,6 +1,6 @@
 package csd214.mysql;
 
-import csd214.pojos.Widget;
+import csd214.pojos.VideoGame;
 
 import java.sql.*;
 
@@ -14,43 +14,46 @@ public class JdbcNicheWidgetApp {
             createTable(conn);
             // 2. Insert
             System.out.println("--- INSERTING ---");
-            Widget w1 = new Widget("Super Widget", 19.99);
-            insertWidget(conn, w1);
+            VideoGame g1 = new VideoGame("Call of Duty", "PS5", 69.99, 100) {
+            };
+            insertVideogame(conn, g1);
             // 3. Read
             System.out.println("--- READING ---");
             listWidgets(conn);
             // 4. Update
             System.out.println("--- UPDATING ---");
-            updateWidgetPrice(conn, "Super Widget", 25.50);
+            updateWidgetPrice(conn, "Call of Duty", 25.50);
 
             // 5. Delete
             System.out.println("--- DELETING ---");
-            deleteWidget(conn, "Super Widget");
+            deleteWidget(conn, "Call of Duty");
             listWidgets(conn);
         } catch (SQLException e) {
             e.printStackTrace();
         }
     }
     private static void createTable(Connection conn) throws SQLException {
-        String sql = "CREATE TABLE IF NOT EXISTS widgets (" +
+        String sql = "CREATE TABLE IF NOT EXISTS video_Game (" +
                 "id INT AUTO_INCREMENT PRIMARY KEY, " +
                 "product_id VARCHAR(36), " +
-                "widget_name VARCHAR(255), " +
+                "name VARCHAR(255), " +
+                "platform VARCHAR(255),"+
                 "price DOUBLE)";
         try (Statement stmt = conn.createStatement()) {
             stmt.execute(sql);
             System.out.println("Table 'widgets' ready.");
         }
     }
-    private static void insertWidget(Connection conn, Widget w) throws SQLException {
+    private static void insertVideogame(Connection conn, VideoGame videoGame) throws SQLException {
         // SECURITY: Use ? to prevent SQL Injection
-        String sql = "INSERT INTO widgets (product_id, widget_name, price, platform) VALUES (?, ?, ?, ?)";
+        String sql = "INSERT INTO video_Game (product_id, name, price, platform) VALUES (?, ?, ?, ?)";
         try (PreparedStatement ps = conn.prepareStatement(sql)) {
-            ps.setString(1, w.getProductId()); // UUID
-            ps.setString(2, w.getWidgetName());
-            ps.setDouble(3, w.getPrice());
+            ps.setString(1, videoGame.getProductId()); // UUID
+            ps.setString(2, videoGame.getName());
+            ps.setDouble(3, videoGame.getPrice());
+            ps.setString(4, videoGame.getPlatform());
             ps.executeUpdate();
-            System.out.println("Saved: " + w.getWidgetName());
+            System.out.println("Saved: " + videoGame.getName());
         }
     }
     private static void listWidgets(Connection conn) throws SQLException {

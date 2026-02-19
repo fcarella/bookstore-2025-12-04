@@ -1,6 +1,6 @@
 package csd214.mysql;
 
-import csd214.bookstore.pojos.Pen;
+import csd214.pojos.Pen;
 
 import java.sql.*;
 
