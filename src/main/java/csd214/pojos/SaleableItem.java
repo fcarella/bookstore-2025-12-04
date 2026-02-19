@@ -1,4 +1,4 @@
-package csd214.bookstore.pojos;
+package csd214.pojos;
 
 public interface SaleableItem {
     void sellItem();
