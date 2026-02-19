@@ -36,26 +36,13 @@ public class App {
             }
 
             switch (choice) {
-                case 1:
-                    addItem();
-                    break;
-                case 2:
-                    editItem();
-                    break;
-                case 3:
-                    deleteItem();
-                    break;
-                case 4:
-                    sellItem();
-                    break;
-                case 5:
-                    listAny();
-                    break;
-                case 99:
-                    // Exit
-                    break;
-                default:
-                    System.out.println("Invalid choice.");
+                case 1: addItem(); break;
+                case 2: editItem(); break;
+                case 3: deleteItem(); break;
+                case 4: sellItem(); break;
+                case 5: listAny(); break;
+                case 99: break;
+                default: System.out.println("Invalid choice.");
             }
         }
     }
@@ -68,6 +55,10 @@ public class App {
             System.out.println("2. Add Magazine");
             System.out.println("3. Add DiscMag");
             System.out.println("4. Add Ticket");
+            System.out.println("5. Add Pen");
+            System.out.println("6. Add Notebook");
+            System.out.println("7. Add Guitar");
+            System.out.println("8. Add Drum");
             System.out.println("99. Exit");
 
             try {
@@ -86,14 +77,24 @@ public class App {
                 case 2: item = new Magazine(); break;
                 case 3: item = new DiscMag(); break;
                 case 4: item = new Ticket(); break;
+                case 5: item = new Pen() {
+                    /**
+                     * @return
+                     */
+                    @Override
+                    public double getPrice() {
+                        return 0;
+                    }
+                }; break;
+                case 6: item = new Notebook(); break;
+                case 7: item = new Guitar(); break;
+                case 8: item = new Drum(); break;
                 default: System.out.println("Invalid selection."); continue;
             }
 
             if(item instanceof Editable) {
-                // PASS THE SHARED SCANNER
-                ((Editable)item).initialize(this.input);
+                ((Editable)item).initialize(new Scanner(System.in));
             }
-
             addItem(item);
         }
     }
@@ -113,6 +114,8 @@ public class App {
             System.out.println("3. Magazines");
             System.out.println("4. DiscMags");
             System.out.println("5. Tickets");
+            System.out.println("6. Stationery");
+            System.out.println("7. Musical Instruments");
             System.out.println("99. Exit");
 
             try {
@@ -132,6 +135,8 @@ public class App {
                 case 3: filter = Magazine.class; break;
                 case 4: filter = DiscMag.class; break;
                 case 5: filter = Ticket.class; break;
+                case 6: filter = Stationary.class; break;
+                case 7: filter = MusicalInstruments.class; break;
                 default: System.out.println("Invalid selection."); continue;
             }
 
@@ -180,8 +185,7 @@ public class App {
     }
 
     public void editItem(Editable item) {
-        // PASS THE SHARED SCANNER
-        item.edit(this.input);
+        item.edit();
     }
 
     public void deleteItem() {
@@ -235,37 +239,33 @@ public class App {
         Faker faker = new Faker();
 
         for (int i = 0; i < 2; i++) {
-            // Book
             Book b = new Book(
                     faker.book().author(),
                     faker.book().title(),
-                    faker.number().randomDouble(2, 10, 50), // Price
-                    faker.number().numberBetween(1, 20)     // Copies
+                    faker.number().randomDouble(2, 10, 50),
+                    faker.number().numberBetween(1, 20)
             );
             addItem(b);
 
-            // Magazine
             Magazine m = new Magazine(
-                    faker.number().numberBetween(100, 500), // Order Qty
-                    faker.date().past(30, TimeUnit.DAYS),   // Date
-                    faker.book().title() + " Monthly",      // Title
-                    faker.number().randomDouble(2, 5, 15),  // Price
-                    faker.number().numberBetween(5, 50)     // Copies
+                    faker.number().numberBetween(100, 500),
+                    faker.date().past(30, TimeUnit.DAYS),
+                    faker.book().title() + " Monthly",
+                    faker.number().randomDouble(2, 5, 15),
+                    faker.number().numberBetween(5, 50)
             );
             addItem(m);
 
-            // DiscMag
             DiscMag dm = new DiscMag(
-                    faker.bool().bool(),                    // Has Disc
-                    faker.number().numberBetween(50, 200),  // Order Qty
-                    faker.date().past(60, TimeUnit.DAYS),   // Date
-                    "Tech Disc: " + faker.app().name(),     // Title
-                    faker.number().randomDouble(2, 10, 25), // Price
-                    faker.number().numberBetween(5, 30)     // Copies
+                    faker.bool().bool(),
+                    faker.number().numberBetween(50, 200),
+                    faker.date().past(60, TimeUnit.DAYS),
+                    "Tech Disc: " + faker.app().name(),
+                    faker.number().randomDouble(2, 10, 25),
+                    faker.number().numberBetween(5, 30)
             );
             addItem(dm);
 
-            // Ticket
             Ticket t = new Ticket();
             t.description = "Concert: " + faker.rockBand().name();
             t.price = faker.number().randomDouble(2, 50, 150);

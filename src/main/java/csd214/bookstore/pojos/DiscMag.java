@@ -14,20 +14,20 @@ public class DiscMag extends Magazine {
         this.hasDisc = hasDisc;
     }
 
-    public void initialize(Scanner input) {
-        // Pass scanner up to parent
-        super.initialize(input);
+    @Override
+    public void initialize(Scanner scanner) {
+        super.initialize(scanner); // Title, Qty, Date, Copies, Price
 
         System.out.println("Has Disc? (true/false):");
-        this.hasDisc = getInput(input, false);
+        this.hasDisc = getInput(false);
     }
 
     @Override
-    public void edit(Scanner input) {
-        super.edit(input); // Title, Price, Copies, OrderQty, Date
+    public void edit() {
+        super.edit(); // Title, Price, Copies, OrderQty, Date
 
         System.out.println("Edit Has Disc [" + this.hasDisc + "]:");
-        this.hasDisc = getInput(input, this.hasDisc);
+        this.hasDisc = getInput(this.hasDisc);
     }
 
     @Override
