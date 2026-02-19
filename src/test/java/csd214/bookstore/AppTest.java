@@ -19,7 +19,8 @@ class AppTest {
     @Test
     void testAppFlow_AddAndEditBook() {
         // 1. Build the Clean Script
-        StringBuilder script = new StringBuilder();
+        StringBuilder script;
+        script = new StringBuilder();
 
         // --- ADD BOOK ---
         script.append("1\n");             // Main Menu: Add Items
