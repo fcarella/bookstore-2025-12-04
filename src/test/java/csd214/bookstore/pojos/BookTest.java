@@ -51,24 +51,18 @@ class BookTest {
         Book book = new Book("Old Author", "Old Title", 10.0, 5);
 
         // 2. Prepare the Script
-        // Order in Code:
-        //   1. super.edit() -> Title
-        //   2. super.edit() -> Price
-        //   3. super.edit() -> Copies
-        //   4. this.edit()  -> Author
-
-        // Scenario: Change Title to "New Title", Keep Price, Keep Copies, Change Author
         String inputData = "New Title\n\n\nNew Author\n";
-        Scanner mockScanner = createMockScanner(inputData);
+        // Redirect System.in to our mock data
+        System.setIn(new java.io.ByteArrayInputStream(inputData.getBytes()));
 
-        // 3. Execute
-        book.edit(mockScanner);
+        // 3. Execute - Note: no arguments passed here!
+        book.edit();
 
         // 4. Verify
-        assertEquals("New Title", book.getTitle());   // Changed
-        assertEquals(10.0, book.getPrice(), 0.001);   // Kept (from \n)
-        assertEquals(5, book.getCopies());            // Kept (from \n)
-        assertEquals("New Author", book.getAuthor()); // Changed
+        assertEquals("New Title", book.getTitle());
+        assertEquals(10.0, book.getPrice(), 0.001);
+        assertEquals(5, book.getCopies());
+        assertEquals("New Author", book.getAuthor());
     }
 
     @Test
