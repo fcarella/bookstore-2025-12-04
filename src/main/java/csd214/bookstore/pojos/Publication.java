@@ -1,6 +1,7 @@
 package csd214.bookstore.pojos;
 
 import java.util.Objects;
+import java.util.Scanner;
 
 public abstract class Publication extends Product {
     private String title = "";
@@ -30,6 +31,8 @@ public abstract class Publication extends Product {
         System.out.println("Enter price:");
         this.price = getInput(0.0);
     }
+
+    public abstract void initialize(Scanner input);
 
     @Override
     public void edit() {

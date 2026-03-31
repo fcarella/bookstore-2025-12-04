@@ -1,6 +1,7 @@
 package csd214.bookstore.pojos;
 
 import java.util.Date;
+import java.util.Scanner;
 
 public class Magazine extends Publication {
     private int orderQty = 0;
@@ -16,7 +17,7 @@ public class Magazine extends Publication {
     }
 
     @Override
-    public void initialize() {
+    public void initialize(Scanner input) {
         super.initialize(); // Title
 
         System.out.println("Enter Order Qty:");

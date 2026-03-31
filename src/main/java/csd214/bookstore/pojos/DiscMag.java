@@ -1,3 +1,4 @@
+
 package csd214.bookstore.pojos;
 
 import java.util.Date;

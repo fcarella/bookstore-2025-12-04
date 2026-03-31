@@ -1,6 +1,7 @@
 package csd214.bookstore.pojos;
 
 import java.util.Objects;
+import java.util.Scanner;
 
 public class Book extends Publication {
     private String author = "";
@@ -19,7 +20,7 @@ public class Book extends Publication {
     }
 
     @Override
-    public void initialize() {
+    public void initialize(Scanner input) {
         // 1. Initialize Parent (Title)
         super.initialize();
 

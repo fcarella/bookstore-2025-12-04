@@ -1,3 +1,4 @@
+
 package csd214.bookstore.pojos;
 
 public class Ticket extends Product {
